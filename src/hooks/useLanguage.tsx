@@ -1259,34 +1259,44 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
     return 'it';
   });
 
-  const changeLanguage = (lang: Language) => {
-    if (!['it', 'en', 'fr', 'es', 'tr', 'sq', 'zh', 'de', 'ro'].includes(lang)) {
-      console.error('[i18n] Invalid language code:', lang);
-      return;
-    }
-    
-    try {
-      console.log('[i18n] changeLanguage ->', lang);
-    } catch {}
-    
-    setCurrentLanguage(lang);
-    
-    // Save to localStorage
-    try { 
-      localStorage.setItem('language', lang); 
-    } catch (error) {
-      console.error('[i18n] Failed to save language to localStorage:', error);
-    }
-    
-    // Update URL parameter while preserving hash
-    try {
-      const url = new URL(window.location.href);
-      url.searchParams.set('lang', lang);
-      window.history.replaceState({}, '', url.toString());
-    } catch (error) {
-      console.error('[i18n] Failed to update URL:', error);
-    }
-  };
+const changeLanguage = (lang: Language) => {
+  if (!['it', 'en', 'fr', 'es', 'tr', 'sq', 'zh', 'de', 'ro'].includes(lang)) {
+    console.error('[i18n] Invalid language code:', lang);
+    return;
+  }
+  
+  try {
+    console.log('[i18n] changeLanguage ->', lang);
+  } catch {}
+  
+  setCurrentLanguage(lang);
+  
+  // Save to localStorage
+  try { 
+    localStorage.setItem('language', lang); 
+  } catch (error) {
+    console.error('[i18n] Failed to save language to localStorage:', error);
+  }
+  
+  // Update URL parameter while preserving hash
+  try {
+    const url = new URL(window.location.href);
+    url.searchParams.set('lang', lang);
+    window.history.replaceState({}, '', url.toString());
+  } catch (error) {
+    console.error('[i18n] Failed to update URL:', error);
+  }
+  
+  // AGGIUNGI QUESTO: Forza il refresh su Chrome mobile
+  if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
+    // Forza un piccolo delay per dare tempo a Chrome mobile di aggiornare
+    setTimeout(() => {
+      window.dispatchEvent(new Event('languagechange'));
+      // Forza il re-render forzando un update del DOM
+      document.documentElement.setAttribute('lang', lang);
+    }, 50);
+  }
+};
 
   const t = (key: string): string => {
     const entry = translations[key];
@@ -1314,3 +1324,20 @@ export const useLanguage = () => {
   }
   return context;
 };
+// AGGIUNGI QUESTO useEffect:
+useEffect(() => {
+  // Listener per forzare il re-render su Chrome mobile
+  const handleLanguageChange = () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const urlLang = urlParams.get('lang') as Language;
+    if (urlLang && urlLang !== currentLanguage) {
+      setCurrentLanguage(urlLang);
+    }
+  };
+  
+  window.addEventListener('languagechange', handleLanguageChange);
+  
+  return () => {
+    window.removeEventListener('languagechange', handleLanguageChange);
+  };
+}, [currentLanguage]);
