@@ -1,0 +1,16 @@
+{
+  "rewrites": [
+    {
+      "source": "/privacy.html",
+      "destination": "/privacy.html"
+    },
+    {
+      "source": "/cookie.html", 
+      "destination": "/cookie.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
