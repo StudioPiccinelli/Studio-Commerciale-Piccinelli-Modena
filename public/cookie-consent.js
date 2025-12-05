@@ -56,7 +56,7 @@
           <div style="color:#6e6e73; line-height:1.6;">
             Utilizziamo cookie necessari per far funzionare il sito e, previo consenso, cookie analitici e di marketing per migliorare i servizi.
           </div>
-          <a href="cookie.html" style="display:inline-block; margin-top:6px; color:#0a84ff;">Scopri di più</a>
+          <a href="/cookie.html" style="display:inline-block; margin-top:6px; color:#0a84ff;">Cookie Policy</a> · <a href="/privacy.html" style="display:inline-block; margin-top:6px; color:#0a84ff;">Privacy Policy</a>
         </div>
         <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
           <button id="cookie-reject" style="appearance:none;border:1px solid rgba(0,0,0,.12);background:#fff;color:#1d1d1f;padding:.7rem 1rem;border-radius:10px;font-weight:600;">Rifiuta non necessari</button>
