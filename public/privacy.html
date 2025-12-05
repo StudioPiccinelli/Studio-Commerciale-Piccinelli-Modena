@@ -3,17 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy - Studio Commerciale Piccinelli</title>
+  <title>Informativa Privacy - Studio Commerciale Piccinelli</title>
   <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <meta name="color-scheme" content="light dark">
   <style>
-    * { box-sizing: border-box; }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
       line-height: 1.7;
       color: #1d1d1f;
       background: #fafafa;
-      margin: 0;
     }
     .header {
       background: rgba(255,255,255,0.85);
@@ -21,185 +20,720 @@
       border-bottom: 1px solid rgba(0,0,0,0.06);
       position: sticky; top: 0; z-index: 20;
     }
-    .nav-container { max-width: 1100px; margin: 0 auto; padding: 0.9rem 1.25rem; display: flex; align-items: center; justify-content: space-between; }
-    .logo { font-weight: 600; color: #1d1d1f; text-decoration: none; }
-    .pill { display:inline-flex; gap:.5rem; align-items:center; padding:.4rem .75rem; border:1px solid rgba(0,0,0,.08); border-radius:999px; font-size:.9rem; color:#1d1d1f; text-decoration:none;}
-    .hero { padding: 4.5rem 1.25rem 2rem; text-align: center; background: linear-gradient(135deg,#fafafa 0%, #f5f5f7 100%); }
-    .hero h1 { font-size: clamp(2rem, 3.5vw, 3rem); margin: 0 0 .5rem; letter-spacing: -0.02em; }
-    .hero p { color:#6e6e73; max-width: 720px; margin: 0.5rem auto 0; font-size: 1.05rem; }
-    .container { max-width: 1000px; margin: 0 auto; padding: 2rem 1.25rem 4rem; }
-    h2 { font-size: 1.45rem; margin: 2.25rem 0 .75rem; }
-    h3 { font-size: 1.15rem; margin: 1.5rem 0 .5rem; }
-    p, li { color:#1d1d1f; }
-    .card {
-      background:#fff; border:1px solid rgba(0,0,0,.06); border-radius:16px; padding:1.25rem 1.25rem;
-      box-shadow: 0 8px 24px rgba(0,0,0,.05);
+    .nav-container { 
+      max-width: 1100px; 
+      margin: 0 auto; 
+      padding: 0.9rem 1.25rem; 
+      display: flex; 
+      align-items: center; 
+      justify-content: space-between; 
     }
-    .grid { display:grid; gap: 1rem; grid-template-columns: repeat(12, 1fr); }
-    .col-8 { grid-column: span 8; }
-    .col-4 { grid-column: span 4; }
+    .logo { 
+      font-weight: 600; 
+      color: #1d1d1f; 
+      text-decoration: none; 
+      font-size: 1.1rem;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #007aff;
+      color: white;
+      text-decoration: none;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .back-btn:hover {
+      background: #0051d5;
+    }
+    .hero { 
+      padding: 4.5rem 1.25rem 2.5rem; 
+      text-align: center; 
+      background: linear-gradient(135deg, #fafafa 0%, #f5f5f7 100%); 
+    }
+    .hero h1 { 
+      font-size: clamp(2rem, 3.5vw, 3rem); 
+      margin: 0 0 0.5rem; 
+      letter-spacing: -0.02em; 
+      font-weight: 700;
+    }
+    .hero p { 
+      color: #6e6e73; 
+      max-width: 720px; 
+      margin: 0.5rem auto 0; 
+      font-size: 1.05rem; 
+    }
+    .updated { 
+      font-size: 0.9rem; 
+      color: #6e6e73; 
+      margin-top: 0.5rem;
+    }
+    .container { 
+      max-width: 1100px; 
+      margin: 0 auto; 
+      padding: 2.5rem 1.25rem 4rem; 
+    }
+    .grid { 
+      display: grid; 
+      gap: 1.5rem; 
+      grid-template-columns: 2fr 1fr; 
+    }
     @media (max-width: 900px) {
-      .col-8, .col-4 { grid-column: 1 / -1; }
+      .grid { grid-template-columns: 1fr; }
+      .sidebar { order: 2; }
     }
-    .list { padding-left: 1.25rem; }
-    .chip { display:inline-block; padding:.2rem .55rem; background:#eff3ff; color:#0a84ff; border-radius:6px; font-size:.85rem; }
-    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:.95rem; background:#f5f5f7; border:1px solid rgba(0,0,0,.08); border-radius:6px; padding:.15rem .35rem; }
+    .card {
+      background: #fff; 
+      border: 1px solid rgba(0,0,0,0.06); 
+      border-radius: 16px; 
+      padding: 1.75rem 2rem;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.05);
+      margin-bottom: 1.5rem;
+    }
+    h2 { 
+      font-size: 1.5rem; 
+      margin: 0 0 1rem; 
+      font-weight: 600;
+      color: #1d1d1f;
+    }
+    h3 { 
+      font-size: 1.2rem; 
+      margin: 1.5rem 0 0.75rem; 
+      font-weight: 600;
+      color: #1d1d1f;
+    }
+    h4 {
+      font-size: 1.05rem;
+      margin: 1.25rem 0 0.5rem;
+      font-weight: 600;
+      color: #1d1d1f;
+    }
+    p { 
+      color: #1d1d1f; 
+      margin: 0.75rem 0;
+    }
+    ul, ol { 
+      padding-left: 1.5rem; 
+      margin: 0.75rem 0;
+    }
+    li { 
+      color: #1d1d1f; 
+      margin: 0.5rem 0;
+    }
+    a { 
+      color: #007aff; 
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .callout {
+      border-left: 4px solid #0a84ff;
+      padding: 1rem 1.25rem;
+      background: #f5f8ff;
+      border-radius: 12px;
+      margin: 1rem 0;
+    }
+    .callout-warning {
+      border-left-color: #ff9500;
+      background: #fff8f0;
+    }
+    .callout-success {
+      border-left-color: #34c759;
+      background: #f0fdf4;
+    }
+    strong { font-weight: 600; }
+    .badge {
+      display: inline-block;
+      padding: 0.25rem 0.6rem;
+      background: #e5e5e7;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      margin-right: 0.5rem;
+    }
+    .badge-blue { background: #e5f1ff; color: #0a84ff; }
+    .badge-green { background: #e8f5e9; color: #34c759; }
+    .badge-orange { background: #fff3e0; color: #ff9500; }
+    .toc {
+      position: sticky;
+      top: 100px;
+    }
+    .toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 1rem 0;
+    }
+    .toc-list li {
+      margin: 0.4rem 0;
+    }
+    .toc-list a {
+      color: #1d1d1f;
+      display: block;
+      padding: 0.4rem 0.75rem;
+      border-radius: 8px;
+      transition: background 0.2s;
+    }
+    .toc-list a:hover {
+      background: #f5f5f7;
+      text-decoration: none;
+    }
+    .contact-box {
+      background: linear-gradient(135deg, #007aff 0%, #0051d5 100%);
+      color: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-top: 1.5rem;
+    }
+    .contact-box h3 {
+      color: white;
+      margin-top: 0;
+    }
+    .contact-box a {
+      color: white;
+      font-weight: 500;
+    }
     .footer {
-      background:#1d1d1f; color:#a1a1a6; text-align:center; padding:2rem 1rem; border-top:1px solid #424245;
+      background: #1d1d1f;
+      color: #a1a1a6;
+      text-align: center;
+      padding: 2.5rem 1rem;
+      border-top: 1px solid #424245;
     }
-    .footer a { color:#fff; text-decoration:none; }
-    a { color:#007aff; }
-    .callout { border-left:3px solid #0a84ff; padding: .75rem 1rem; background:#f5f8ff; border-radius:12px; }
-    .muted { color:#6e6e73; }
-    .section-card { margin-bottom: 1rem; }
-    .toc a { text-decoration: none; color: #1d1d1f; }
-    .toc li { margin: .25rem 0; }
-    .updated { font-size:.9rem; color:#6e6e73; }
+    .footer a {
+      color: #fff;
+      text-decoration: none;
+      margin: 0 0.75rem;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    th, td {
+      text-align: left;
+      padding: 0.75rem;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    th {
+      background: #f5f5f7;
+      font-weight: 600;
+    }
   </style>
 </head>
 <body>
   <header class="header">
     <div class="nav-container">
       <a class="logo" href="/">Studio Commerciale Piccinelli</a>
-      
+      <a href="/" class="back-btn">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M6.5 3L1.5 8L6.5 13M2 8H14.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Torna alla Home
+      </a>
     </div>
   </header>
 
   <section class="hero">
     <h1>Informativa sulla Privacy</h1>
-    <p>Ai sensi degli artt. 13 e 14 del Regolamento (UE) 2016/679 (“GDPR”) e della normativa italiana vigente.</p>
-    <p class="updated">Ultimo aggiornamento: 13 agosto 2025</p>
+    <p>Informativa sul trattamento dei dati personali ai sensi degli artt. 13 e 14 del Regolamento (UE) 2016/679 (GDPR)</p>
+    <p class="updated">Ultimo aggiornamento: 5 dicembre 2025</p>
   </section>
 
   <main class="container">
     <div class="grid">
-      <div class="col-8">
-        <div class="card section-card">
-          <h2>1) Titolare del trattamento</h2>
-          <p><strong>Studio Commerciale Piccinelli</strong> – Via Emilia Centro, 75 – 41122 Modena (MO) – Italia<br>
-          Tel. 059/218032 - Fax: 059 / 867 2225 – Email: <a href="mailto:info@assoprof.it">info@assoprof.it</a> - PEC: <a href="mailto:studiopiccinelli@pec.it">studiopiccinelli@pec.it</a><br>
-          P.IVA: 00385320361<br>
-          Il Titolare non ha nominato un DPO in quanto non ricorrono i presupposti di legge.</p>
-        </div>
-
-        <div class="card section-card">
-          <h2>2) Tipologie di dati trattati</h2>
-          <ul class="list">
-            <li><strong>Dati anagrafici e di contatto</strong> (es. nome, cognome, email, telefono).</li>
-            <li><strong>Dati contrattuali/fiscali</strong> necessari per l’erogazione dei servizi professionali.</li>
-            <li><strong>Dati di navigazione</strong> (es. indirizzi IP, log) e cookie: v. <a href="cookie.html">Cookie Policy</a>.</li>
-            <li><strong>Messaggi inviati</strong> tramite modulo “Parla con un esperto”.</li>
-            <li><strong>Candidature</strong> (CV) se spontaneamente inviate all’indirizzo dello Studio.</li>
-            <li><strong>Dati particolari</strong> solo se strettamente necessari all’incarico professionale e nei limiti di legge.</li>
-          </ul>
-        </div>
-
-        <div class="card section-card">
-          <h2>3) Finalità e basi giuridiche</h2>
-          <ul class="list">
-            <li><strong>Riscontro a richieste di informazioni/contatto</strong> inviate dal sito (<em>art. 6.1.b GDPR</em> esecuzione di misure precontrattuali).</li>
-            <li><strong>Instaurazione ed esecuzione dell’incarico professionale</strong>, adempimenti contabili e fiscali (<em>art. 6.1.b</em> e <em>6.1.c</em> obbligo legale).</li>
-            <li><strong>Adempimenti di legge</strong> e richieste di Autorità (<em>art. 6.1.c</em>).</li>
-            <li><strong>Tutela in giudizio</strong> dei diritti dello Studio (<em>art. 6.1.f</em> legittimo interesse).</li>
-            <li><strong>Invio di comunicazioni informative</strong> su novità normative e servizi analoghi a clienti già acquisiti (<em>art. 6.1.f</em> – soft spam, con opt-out).</li>
-            <li><strong>Marketing</strong> (newsletter) solo previo <strong>consenso</strong> espresso (<em>art. 6.1.a</em>).</li>
-          </ul>
-        </div>
-
-        <div class="card section-card">
-          <h2>4) Natura del conferimento</h2>
-          <p>Il conferimento dei dati contrassegnati come obbligatori è necessario per evadere le richieste o adempiere agli obblighi contrattuali/legali; in mancanza non sarà possibile fornire il servizio richiesto.</p>
-        </div>
-
-        <div class="card section-card">
-          <h2>5) Modalità del trattamento e sicurezza</h2>
-          <p>I dati sono trattati con strumenti cartacei e informatici, con misure tecniche e organizzative adeguate (controlli di accesso, sistemi di backup, cifratura dove opportuno, <span class="kbd">https</span>). Il trattamento non prevede processi decisionali automatizzati che producano effetti giuridici sull’interessato, né profilazione senza consenso.</p>
-        </div>
-
-        <div class="card section-card">
-          <h2>6) Tempi di conservazione</h2>
-          <ul class="list">
-            <li>Richieste via modulo/contatti: <strong>12 mesi</strong> dalla chiusura della richiesta.</li>
-            <li>Documentazione amministrativo‑contabile: fino a <strong>10 anni</strong> (obblighi di legge).</li>
-            <li>CV: <strong>12 mesi</strong> salvo diverso consenso/interesse.</li>
-            <li>Marketing/newsletter: fino a revoca del consenso o <strong>24 mesi</strong> dall’ultimo contatto attivo.</li>
-          </ul>
-        </div>
-
-        <div class="card section-card">
-          <h2>7) Comunicazione e categorie di destinatari</h2>
-          <p>I dati possono essere comunicati a soggetti esterni che agiscono quali <strong>Responsabili</strong> ex art. 28 GDPR (es. fornitori IT, consulenti, società di servizi contabili, provider email, hosting), nonché a soggetti legittimati per obbligo di legge e ad Autorità. L’elenco aggiornato dei responsabili è disponibile su richiesta.</p>
-        </div>
-
-        <div class="card section-card">
-          <h2>8) Trasferimenti extra UE</h2>
-          <p>Eventuali trasferimenti verso paesi extra UE/SEE avverranno nel rispetto del Capo V GDPR, sulla base di decisioni di adeguatezza della Commissione o di <em>Clausole Contrattuali Standard</em> (SCC) e misure supplementari, ove necessarie.</p>
-        </div>
-
-        <div class="card section-card">
-          <h2>9) Diritti dell’interessato</h2>
-          <p>Gli interessati possono esercitare i diritti di cui agli artt. 15–22 GDPR (accesso, rettifica, cancellazione, limitazione, portabilità, opposizione) e il diritto di revocare in qualsiasi momento i consensi prestati, senza pregiudicare la liceità del trattamento basata sul consenso prima della revoca.</p>
+      <div class="main-content">
+        
+        <!-- Sezione 1 -->
+        <div class="card" id="section-1">
+          <h2>1. Titolare del Trattamento</h2>
+          <p><strong>Studio Commerciale Piccinelli</strong></p>
+          <p>
+            Via Emilia Centro, 75<br>
+            41121 Modena (MO), Italia<br>
+            Tel: 059/218032<br>
+            Fax: 059/867 2225<br>
+            Email: <a href="mailto:info@assoprof.it">info@assoprof.it</a><br>
+            PEC: <a href="mailto:studiopiccinelli@pec.it">studiopiccinelli@pec.it</a><br>
+            P.IVA: 00385320361
+          </p>
           <div class="callout">
-            <strong>Per esercitare i diritti:</strong> scrivere a <a href="mailto:info@assoprof.it">info@assoprof.it</a> con oggetto “Esercizio diritti privacy”, specificando la richiesta. È possibile proporre reclamo all’Autorità Garante per la protezione dei dati personali (<a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">www.garanteprivacy.it</a>).
+            <strong>Data Protection Officer (DPO):</strong> Lo Studio non ha nominato un Responsabile della Protezione dei Dati in quanto non ricorrono i presupposti di cui all'art. 37 GDPR.
           </div>
         </div>
 
-        <div class="card section-card">
-          <h2>10) Modulo “Parla con un esperto”</h2>
-          <p>I dati inseriti nel modulo (nome, email, telefono, messaggio) sono utilizzati esclusivamente per gestire la richiesta e l’eventuale ricontatto. La <strong>spunta</strong> dell’apposita casella certifica l’avvenuta presa visione della presente informativa. Base giuridica: art. 6.1.b GDPR.</p>
-        </div>
+        <!-- Sezione 2 -->
+        <div class="card" id="section-2">
+          <h2>2. Tipologie di Dati Trattati</h2>
+          
+          <h3>2.1 Dati forniti volontariamente</h3>
+          <ul>
+            <li><strong>Dati anagrafici e di contatto:</strong> nome, cognome, indirizzo email, numero di telefono, ragione sociale, indirizzo</li>
+            <li><strong>Dati contrattuali:</strong> informazioni relative all'incarico professionale, documenti contabili e fiscali</li>
+            <li><strong>Messaggi e comunicazioni:</strong> contenuto dei messaggi inviati tramite il modulo di contatto o via email</li>
+            <li><strong>Curriculum Vitae:</strong> se inviato spontaneamente per candidature</li>
+          </ul>
 
-        <div class="card section-card">
-          <h2>11) Cookie e tecnologie similari</h2>
-          <p>Il sito può utilizzare cookie tecnici e, previo consenso, cookie analitici/profilazione di terze parti. Per i dettagli su tipologie, finalità, tempi di conservazione e gestione delle preferenze si rimanda alla <a href="cookie.html">Cookie Policy</a>, accessibile in ogni momento dal footer del sito.</p>
-        </div>
+          <h3>2.2 Dati raccolti automaticamente</h3>
+          <ul>
+            <li><strong>Dati di navigazione:</strong> indirizzo IP, tipo di browser, sistema operativo, timestamp di accesso, pagine visitate</li>
+            <li><strong>Dati tecnici:</strong> risoluzione schermo, lingua del browser, referrer URL</li>
+            <li><strong>Log del server:</strong> dati relativi alle richieste HTTP registrati automaticamente dal server Vercel</li>
+          </ul>
 
-        <div class="card section-card">
-          <h2>12) Sicurezza, minori e aggiornamenti</h2>
-          <ul class="list">
-            <li><strong>Sicurezza:</strong> lo Studio adotta misure adeguate per proteggere i dati da accessi non autorizzati, perdita o divulgazione.</li>
-            <li><strong>Minori:</strong> i servizi sono destinati a soggetti maggiorenni. Non raccogliamo consapevolmente dati di minori di 14 anni; eventuali dati saranno cancellati.</li>
-            <li><strong>Aggiornamenti:</strong> la presente informativa può essere aggiornata; le versioni precedenti possono essere richieste al Titolare.</li>
+          <h3>2.3 Dati particolari (categorie speciali)</h3>
+          <div class="callout callout-warning">
+            <strong>Attenzione:</strong> Lo Studio non raccoglie intenzionalmente dati particolari di cui all'art. 9 GDPR (dati che rivelino l'origine razziale, le opinioni politiche, le convinzioni religiose, lo stato di salute, ecc.). Qualora tali dati fossero necessari per l'esecuzione di specifici incarichi professionali, saranno trattati esclusivamente nei limiti di quanto consentito dalla legge e previo consenso esplicito ove richiesto.
+          </div>
+
+          <h3>2.4 Fonte dei dati</h3>
+          <p>I dati personali sono raccolti:</p>
+          <ul>
+            <li>Direttamente dall'interessato (moduli di contatto, email, incontri)</li>
+            <li>Da soggetti terzi nel contesto di obblighi legali o contrattuali (es. Agenzia delle Entrate, INPS, altri professionisti)</li>
           </ul>
         </div>
+
+        <!-- Sezione 3 -->
+        <div class="card" id="section-3">
+          <h2>3. Finalità del Trattamento e Basi Giuridiche</h2>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Finalità</th>
+                <th>Base Giuridica</th>
+                <th>Consenso richiesto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Gestione richieste di informazioni</strong> inviate tramite modulo di contatto o email</td>
+                <td>Art. 6.1.b GDPR<br>(misure precontrattuali)</td>
+                <td><span class="badge-green badge">No</span></td>
+              </tr>
+              <tr>
+                <td><strong>Esecuzione incarichi professionali</strong> (consulenza fiscale, societaria, contabile, ecc.)</td>
+                <td>Art. 6.1.b GDPR<br>(esecuzione contratto)</td>
+                <td><span class="badge-green badge">No</span></td>
+              </tr>
+              <tr>
+                <td><strong>Adempimenti di legge</strong> (obblighi contabili, fiscali, antiriciclaggio, ecc.)</td>
+                <td>Art. 6.1.c GDPR<br>(obbligo legale)</td>
+                <td><span class="badge-green badge">No</span></td>
+              </tr>
+              <tr>
+                <td><strong>Tutela dei diritti</strong> dello Studio in sede giudiziaria</td>
+                <td>Art. 6.1.f GDPR<br>(interesse legittimo)</td>
+                <td><span class="badge-green badge">No</span></td>
+              </tr>
+              <tr>
+                <td><strong>Invio comunicazioni informative</strong> su novità normative e servizi analoghi a clienti già acquisiti</td>
+                <td>Art. 6.1.f GDPR<br>(legittimo interesse - soft spam)</td>
+                <td><span class="badge-orange badge">Opt-out disponibile</span></td>
+              </tr>
+              <tr>
+                <td><strong>Marketing e newsletter</strong> promozionali</td>
+                <td>Art. 6.1.a GDPR<br>(consenso)</td>
+                <td><span class="badge-blue badge">Sì</span></td>
+              </tr>
+              <tr>
+                <td><strong>Gestione candidature</strong> (selezione del personale)</td>
+                <td>Art. 6.1.b GDPR<br>(misure precontrattuali)</td>
+                <td><span class="badge-green badge">No</span></td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="callout">
+            <strong>Nota sul "Soft Spam":</strong> Ai sensi dell'art. 130 co. 4 del Codice Privacy italiano, possiamo inviare comunicazioni commerciali relative a servizi analoghi a quelli già forniti ai nostri clienti, senza necessità di consenso preventivo. È sempre possibile opporsi a tali comunicazioni in qualsiasi momento.
+          </div>
+        </div>
+
+        <!-- Sezione 4 -->
+        <div class="card" id="section-4">
+          <h2>4. Natura del Conferimento dei Dati</h2>
+          
+          <h3>4.1 Dati obbligatori</h3>
+          <p>Il conferimento dei dati contrassegnati come obbligatori nei moduli di contatto è necessario per:</p>
+          <ul>
+            <li>Rispondere alle richieste di informazioni</li>
+            <li>Instaurare ed eseguire il rapporto professionale</li>
+            <li>Adempiere agli obblighi di legge</li>
+          </ul>
+          <p><strong>Il rifiuto di fornire tali dati comporta l'impossibilità di fornire il servizio richiesto.</strong></p>
+
+          <h3>4.2 Dati facoltativi</h3>
+          <p>I dati non contrassegnati come obbligatori sono facoltativi. Il loro mancato conferimento non pregiudica la fruizione dei servizi essenziali, ma potrebbe limitare alcune funzionalità o impedire l'invio di comunicazioni informative.</p>
+        </div>
+
+        <!-- Sezione 5 -->
+        <div class="card" id="section-5">
+          <h2>5. Modalità del Trattamento</h2>
+          
+          <h3>5.1 Strumenti e modalità</h3>
+          <p>I dati personali sono trattati:</p>
+          <ul>
+            <li><strong>Con strumenti elettronici:</strong> computer, server, software gestionali, posta elettronica, sistemi di backup</li>
+            <li><strong>Con strumenti cartacei:</strong> fascicoli, documenti stampati conservati in archivi protetti</li>
+            <li><strong>Con procedure manuali e automatizzate:</strong> nel rispetto delle misure di sicurezza adeguate</li>
+          </ul>
+
+          <h3>5.2 Misure di sicurezza</h3>
+          <p>Lo Studio adotta misure tecniche e organizzative adeguate per garantire un livello di sicurezza adeguato al rischio, tra cui:</p>
+          <ul>
+            <li><strong>Crittografia:</strong> connessione HTTPS (TLS/SSL) per tutte le comunicazioni via web</li>
+            <li><strong>Controlli di accesso:</strong> autenticazione e autorizzazione per l'accesso ai sistemi</li>
+            <li><strong>Backup regolari:</strong> copie di sicurezza dei dati con protezione crittografica</li>
+            <li><strong>Firewall e antivirus:</strong> protezione perimetrale e dei singoli dispositivi</li>
+            <li><strong>Formazione del personale:</strong> istruzioni specifiche sulle procedure di sicurezza</li>
+            <li><strong>Accesso limitato:</strong> solo il personale autorizzato può accedere ai dati personali</li>
+          </ul>
+
+          <h3>5.3 Decisioni automatizzate e profilazione</h3>
+          <div class="callout callout-success">
+            <strong>Nessuna profilazione:</strong> Lo Studio non effettua alcun trattamento basato su decisioni automatizzate, compresa la profilazione, che produca effetti giuridici sull'interessato o che incida significativamente sulla sua persona.
+          </div>
+        </div>
+
+        <!-- Sezione 6 -->
+        <div class="card" id="section-6">
+          <h2>6. Tempi di Conservazione</h2>
+          
+          <table>
+            <thead>
+              <tr>
+                <th>Tipologia di dati</th>
+                <th>Tempo di conservazione</th>
+                <th>Motivo</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Richieste via modulo/contatto</td>
+                <td><strong>12 mesi</strong></td>
+                <td>Gestione della richiesta e follow-up</td>
+              </tr>
+              <tr>
+                <td>Documentazione contrattuale</td>
+                <td><strong>10 anni</strong></td>
+                <td>Obblighi civilistici e fiscali</td>
+              </tr>
+              <tr>
+                <td>Documentazione contabile/fiscale</td>
+                <td><strong>10 anni</strong></td>
+                <td>Art. 2220 c.c. e normativa fiscale</td>
+              </tr>
+              <tr>
+                <td>Curriculum Vitae</td>
+                <td><strong>24 mesi</strong></td>
+                <td>Valutazione candidature e selezione</td>
+              </tr>
+              <tr>
+                <td>Newsletter/Marketing</td>
+                <td>Fino a revoca o <strong>24 mesi</strong> di inattività</td>
+                <td>Gestione consenso marketing</td>
+              </tr>
+              <tr>
+                <td>Log server (Vercel)</td>
+                <td><strong>30 giorni</strong></td>
+                <td>Sicurezza e troubleshooting</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p>Decorsi i termini sopra indicati, i dati saranno cancellati o anonimizzati in modo irreversibile, salvo l'ulteriore conservazione necessaria per l'accertamento o la difesa di un diritto in sede giudiziaria.</p>
+        </div>
+
+        <!-- Sezione 7 -->
+        <div class="card" id="section-7">
+          <h2>7. Destinatari e Categorie di Destinatari dei Dati</h2>
+          
+          <h3>7.1 Personale interno</h3>
+          <p>I dati possono essere trattati dai dipendenti e collaboratori dello Studio espressamente autorizzati e formati, nell'ambito delle rispettive funzioni.</p>
+
+          <h3>7.2 Responsabili del trattamento (art. 28 GDPR)</h3>
+          <p>I dati possono essere comunicati a soggetti esterni che operano quali Responsabili del trattamento, tra cui:</p>
+          <ul>
+            <li><strong>Fornitori di servizi IT:</strong> hosting web (Vercel Inc.), gestione server, assistenza tecnica</li>
+            <li><strong>Provider email:</strong> gestione caselle di posta elettronica</li>
+            <li><strong>Software gestionali:</strong> fornitori di applicativi per contabilità, fiscalità, gestione clienti</li>
+            <li><strong>Consulenti esterni:</strong> commercialisti, avvocati, consulenti del lavoro, solo per le attività strettamente necessarie</li>
+            <li><strong>Società di servizi:</strong> archiviazione documenti, call center, manutenzione</li>
+          </ul>
+
+          <h3>7.3 Soggetti pubblici</h3>
+          <p>I dati possono essere comunicati, in adempimento di obblighi di legge, a:</p>
+          <ul>
+            <li>Agenzia delle Entrate</li>
+            <li>INPS e altri enti previdenziali</li>
+            <li>Camera di Commercio</li>
+            <li>Autorità giudiziaria</li>
+            <li>Guardia di Finanza e altre autorità di controllo</li>
+          </ul>
+
+          <h3>7.4 Elenco responsabili</h3>
+          <p>L'elenco completo e aggiornato dei Responsabili del trattamento esterni è disponibile su richiesta scrivendo a <a href="mailto:info@assoprof.it">info@assoprof.it</a>.</p>
+
+          <h3>7.5 Vercel Inc. - Servizio di Hosting</h3>
+          <div class="callout">
+            <strong>Hosting e infrastruttura:</strong> Il sito web è ospitato su Vercel Inc., con sede negli Stati Uniti. Vercel agisce come Responsabile del trattamento per i dati di navigazione e i log del server. Vercel è certificato SOC 2 Type II e utilizza misure di sicurezza adeguate. Per maggiori informazioni: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">Privacy Policy di Vercel</a>.
+          </div>
+        </div>
+
+        <!-- Sezione 8 -->
+        <div class="card" id="section-8">
+          <h2>8. Trasferimenti Extra-UE/SEE</h2>
+          
+          <h3>8.1 Hosting Vercel</h3>
+          <p>Vercel Inc. è una società con sede negli Stati Uniti d'America. I server utilizzati per l'hosting del sito possono trovarsi sia nell'Unione Europea che negli Stati Uniti.</p>
+          
+          <p><strong>Garanzie adeguate per i trasferimenti extra-UE:</strong></p>
+          <ul>
+            <li><strong>Clausole Contrattuali Standard (SCC):</strong> Vercel ha adottato le Clausole Contrattuali Standard approvate dalla Commissione Europea come strumento di trasferimento ai sensi dell'art. 46 GDPR</li>
+            <li><strong>Misure tecniche supplementari:</strong> crittografia in transito (TLS) e a riposo, controlli di accesso, pseudonimizzazione dove possibile</li>
+            <li><strong>Certificazioni:</strong> SOC 2 Type II compliance</li>
+          </ul>
+
+          <div class="callout callout-warning">
+            <strong>Importante:</strong> A seguito della sentenza "Schrems II" (Corte di Giustizia UE, C-311/18), lo Studio ha valutato le garanzie supplementari offerte da Vercel e le ritiene adeguate ai sensi delle Raccomandazioni del Comitato Europeo per la Protezione dei Dati (EDPB).
+          </div>
+
+          <h3>8.2 Altri trasferimenti</h3>
+          <p>Eventuali altri trasferimenti di dati verso paesi extra-UE/SEE avverranno solo previa verifica dell'esistenza di:</p>
+          <ul>
+            <li>Decisioni di adeguatezza della Commissione Europea (art. 45 GDPR), oppure</li>
+            <li>Garanzie adeguate (art. 46 GDPR): SCC, Binding Corporate Rules, certificazioni, ecc.</li>
+          </ul>
+        </div>
+
+        <!-- Sezione 9 -->
+        <div class="card" id="section-9">
+          <h2>9. Diritti dell'Interessato</h2>
+          
+          <p>In qualità di interessato, hai il diritto di ottenere dallo Studio:</p>
+
+          <h3>9.1 Diritto di accesso (art. 15 GDPR)</h3>
+          <p>Puoi ottenere conferma che sia o meno in corso un trattamento di dati personali che ti riguardano e, in tal caso, di ottenere l'accesso a tali dati e alle seguenti informazioni: finalità, categorie di dati, destinatari, periodo di conservazione, ecc.</p>
+
+          <h3>9.2 Diritto di rettifica (art. 16 GDPR)</h3>
+          <p>Puoi ottenere la rettifica dei dati personali inesatti o l'integrazione di quelli incompleti.</p>
+
+          <h3>9.3 Diritto alla cancellazione / "diritto all'oblio" (art. 17 GDPR)</h3>
+          <p>Puoi ottenere la cancellazione dei tuoi dati personali nei casi previsti dalla legge (es. dati non più necessari, consenso revocato, trattamento illecito).</p>
+
+          <h3>9.4 Diritto di limitazione (art. 18 GDPR)</h3>
+          <p>Puoi ottenere la limitazione del trattamento quando ricorre una delle ipotesi previste (es. contestazione dell'esattezza dei dati, opposizione al trattamento).</p>
+
+          <h3>9.5 Diritto alla portabilità (art. 20 GDPR)</h3>
+          <p>Puoi ricevere in un formato strutturato, di uso comune e leggibile da dispositivo automatico i dati personali che ti riguardano e hai il diritto di trasmetterli a un altro titolare.</p>
+
+          <h3>9.6 Diritto di opposizione (art. 21 GDPR)</h3>
+          <p>Puoi opporti in qualsiasi momento al trattamento dei tuoi dati per motivi connessi alla tua situazione particolare, quando il trattamento è basato sull'interesse legittimo del Titolare.</p>
+
+          <h3>9.7 Revoca del consenso (art. 7.3 GDPR)</h3>
+          <p>Quando il trattamento è basato sul consenso, hai il diritto di revocarlo in qualsiasi momento, senza pregiudicare la liceità del trattamento basata sul consenso prestato prima della revoca.</p>
+
+          <h3>9.8 Come esercitare i diritti</h3>
+          <div class="callout callout-success">
+            <strong>Per esercitare i tuoi diritti, puoi:</strong>
+            <ul style="margin-top: 0.75rem;">
+              <li>Inviare una richiesta via email a: <a href="mailto:info@assoprof.it">info@assoprof.it</a></li>
+              <li>Inviare una richiesta via PEC a: <a href="mailto:studiopiccinelli@pec.it">studiopiccinelli@pec.it</a></li>
+              <li>Inviare una raccomandata A/R all'indirizzo: Via Emilia Centro, 75 - 41121 Modena (MO)</li>
+            </ul>
+            <p style="margin-top: 0.75rem;"><strong>Oggetto:</strong> "Esercizio diritti privacy - GDPR"</p>
+            <p><strong>Tempo di risposta:</strong> Lo Studio fornirà riscontro senza ingiustificato ritardo e, comunque, entro 1 mese dal ricevimento della richiesta. Tale termine può essere prorogato di 2 mesi in caso di particolare complessità, dandone comunicazione motivata entro il primo mese.</p>
+          </div>
+
+          <h3>9.9 Diritto di reclamo all'Autorità di controllo</h3>
+          <p>Hai il diritto di proporre reclamo all'Autorità Garante per la protezione dei dati personali se ritieni che il trattamento dei tuoi dati personali violi il GDPR:</p>
+          <p>
+            <strong>Garante per la protezione dei dati personali</strong><br>
+            Piazza Venezia, 11 - 00187 Roma<br>
+            Tel: +39 06 696771<br>
+            Email: <a href="mailto:garante@gpdp.it">garante@gpdp.it</a><br>
+            PEC: <a href="mailto:protocollo@pec.gpdp.it">protocollo@pec.gpdp.it</a><br>
+            Sito web: <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">www.garanteprivacy.it</a>
+          </p>
+        </div>
+
+        <!-- Sezione 10 -->
+        <div class="card" id="section-10">
+          <h2>10. Cookie e Tecnologie di Tracciamento</h2>
+          
+          <p>Il sito utilizza cookie e tecnologie similari. Per informazioni dettagliate su:</p>
+          <ul>
+            <li>Tipologie di cookie utilizzati (tecnici, analitici, di profilazione)</li>
+            <li>Finalità specifiche di ogni cookie</li>
+            <li>Durata e scadenza</li>
+            <li>Come gestire o revocare il consenso</li>
+            <li>Cookie di terze parti</li>
+          </ul>
+          
+          <p>Si prega di consultare la <strong><a href="/cookie.html">Cookie Policy</a></strong> dedicata, accessibile in qualsiasi momento dal footer del sito.</p>
+
+          <div class="callout">
+            <strong>Nota:</strong> Il sito NON utilizza Google Analytics né altri strumenti di analisi che comportino profilazione degli utenti. Vengono raccolti solo dati aggregati e anonimi per statistiche di accesso tramite i log di Vercel.
+          </div>
+        </div>
+
+        <!-- Sezione 11 -->
+        <div class="card" id="section-11">
+          <h2>11. Modulo "Contattaci" / "Richiedi Consulenza"</h2>
+          
+          <p>I dati personali inseriti nei moduli di contatto presenti sul sito (nome, email, telefono, messaggio, eventuale azienda) sono trattati esclusivamente per:</p>
+          <ul>
+            <li>Gestire la richiesta di informazioni</li>
+            <li>Fornire un riscontro personalizzato</li>
+            <li>Eventuale ricontatto telefonico o via email</li>
+          </ul>
+
+          <p><strong>Base giuridica:</strong> Art. 6.1.b GDPR (misure precontrattuali su richiesta dell'interessato)</p>
+          <p><strong>Consenso:</strong> La spunta della casella relativa alla privacy certifica l'avvenuta presa visione della presente informativa ed esprime il consenso al trattamento dei dati per le finalità sopra indicate.</p>
+          <p><strong>Conservazione:</strong> I dati saranno conservati per 12 mesi dalla chiusura della pratica o fino all'eventuale instaurazione di un rapporto contrattuale.</p>
+        </div>
+
+        <!-- Sezione 12 -->
+        <div class="card" id="section-12">
+          <h2>12. Sicurezza dei Dati</h2>
+          
+          <p>Lo Studio Commerciale Piccinelli si impegna a proteggere i dati personali adottando misure tecniche e organizzative adeguate, tra cui:</p>
+
+          <h3>Misure tecniche</h3>
+          <ul>
+            <li><strong>Crittografia TLS/SSL:</strong> tutte le comunicazioni tra il browser e il server avvengono in modalità protetta (HTTPS)</li>
+            <li><strong>Backup crittografati:</strong> copie di sicurezza regolari con protezione tramite cifratura</li>
+            <li><strong>Firewall e antivirus:</strong> protezione perimetrale e sui singoli dispositivi</li>
+            <li><strong>Aggiornamenti di sicurezza:</strong> applicazione tempestiva di patch e aggiornamenti</li>
+            <li><strong>Password policy:</strong> credenziali complesse e cambio periodico</li>
+          </ul>
+
+          <h3>Misure organizzative</h3>
+          <ul>
+            <li><strong>Autorizzazioni di accesso:</strong> solo il personale autorizzato può accedere ai dati</li>
+            <li><strong>Formazione:</strong> istruzioni specifiche al personale sulle procedure di sicurezza</li>
+            <li><strong>Audit periodici:</strong> verifica delle misure di sicurezza implementate</li>
+            <li><strong>Procedure di data breach:</strong> piano di gestione delle violazioni dei dati</li>
+          </ul>
+
+          <div class="callout callout-warning">
+            <strong>Data Breach:</strong> In caso di violazione dei dati personali che comporti un rischio per i diritti e le libertà degli interessati, lo Studio provvederà a notificare la violazione all'Autorità Garante entro 72 ore e, se necessario, a comunicarla direttamente agli interessati, conformemente agli artt. 33 e 34 GDPR.
+          </div>
+        </div>
+
+        <!-- Sezione 13 -->
+        <div class="card" id="section-13">
+          <h2>13. Minori</h2>
+          
+          <p>I servizi offerti dal sito sono destinati esclusivamente a persone maggiorenni (18 anni compiuti).</p>
+          
+          <p>Lo Studio non raccoglie consapevolmente dati personali di minori di 16 anni (o età inferiore prevista dalla normativa nazionale per il consenso al trattamento). Nel caso in cui venisse a conoscenza di aver raccolto dati di minori senza il consenso dei genitori o di chi esercita la responsabilità genitoriale, provvederà immediatamente alla loro cancellazione.</p>
+
+          <div class="callout">
+            <strong>Se sei un genitore o tutore</strong> e ritieni che tuo figlio ci abbia fornito dati personali senza il tuo consenso, ti invitiamo a contattarci immediatamente a <a href="mailto:info@assoprof.it">info@assoprof.it</a> per richiederne la cancellazione.
+          </div>
+        </div>
+
+        <!-- Sezione 14 -->
+        <div class="card" id="section-14">
+          <h2>14. Modifiche alla Privacy Policy</h2>
+          
+          <p>La presente Informativa Privacy può essere aggiornata periodicamente per riflettere modifiche nelle pratiche di trattamento dei dati, nella normativa applicabile o nei servizi offerti.</p>
+
+          <p>In caso di modifiche sostanziali, lo Studio si impegna a:</p>
+          <ul>
+            <li>Pubblicare la nuova versione sul sito con evidenza della data di aggiornamento</li>
+            <li>Informare gli utenti registrati tramite email o avviso sul sito</li>
+            <li>Richiedere, ove necessario, un nuovo consenso</li>
+          </ul>
+
+          <p><strong>Data ultimo aggiornamento: 5 dicembre 2025</strong></p>
+          <p>Le versioni precedenti della Privacy Policy sono disponibili su richiesta scrivendo a <a href="mailto:info@assoprof.it">info@assoprof.it</a>.</p>
+        </div>
+
+        <!-- Sezione 15 -->
+        <div class="card" id="section-15">
+          <h2>15. Legge Applicabile e Foro Competente</h2>
+          
+          <p>La presente Informativa è redatta in conformità al Regolamento (UE) 2016/679 (GDPR), al D.Lgs. 196/2003 (Codice Privacy italiano) come modificato dal D.Lgs. 101/2018, e alle Linee Guida del Garante Privacy italiano e del Comitato Europeo per la Protezione dei Dati (EDPB).</p>
+
+          <p>Per qualsiasi controversia relativa all'interpretazione, esecuzione o risoluzione della presente Informativa, sarà competente in via esclusiva il Foro di Modena.</p>
+        </div>
+
+        <!-- Contatti -->
+        <div class="card" id="section-16">
+          <h2>16. Contatti per Informazioni sulla Privacy</h2>
+          
+          <p>Per qualsiasi domanda, chiarimento o richiesta relativa al trattamento dei tuoi dati personali, puoi contattare lo Studio:</p>
+
+          <div class="contact-box">
+            <h3>Studio Commerciale Piccinelli</h3>
+            <p style="margin: 0.5rem 0;">
+              <strong>Email:</strong> <a href="mailto:info@assoprof.it">info@assoprof.it</a><br>
+              <strong>PEC:</strong> <a href="mailto:studiopiccinelli@pec.it">studiopiccinelli@pec.it</a><br>
+              <strong>Telefono:</strong> 059/218032<br>
+              <strong>Indirizzo:</strong> Via Emilia Centro, 75 - 41121 Modena (MO)
+            </p>
+            <p style="margin-top: 1rem; font-size: 0.9rem;">
+              Ti risponderemo entro 1 mese dalla ricezione della richiesta.
+            </p>
+          </div>
+        </div>
+
       </div>
 
-      <aside class="col-4">
-        <div class="card">
+      <!-- Sidebar -->
+      <aside class="sidebar">
+        <div class="card toc">
           <h3>Indice</h3>
-          <ol class="list toc">
-            <li><a href="#t1" onclick="scrollToH2(1)">Titolare</a></li>
-            <li><a href="#t2" onclick="scrollToH2(2)">Dati trattati</a></li>
-            <li><a href="#t3" onclick="scrollToH2(3)">Finalità e basi</a></li>
-            <li><a href="#t4" onclick="scrollToH2(4)">Natura</a></li>
-            <li><a href="#t5" onclick="scrollToH2(5)">Modalità</a></li>
-            <li><a href="#t6" onclick="scrollToH2(6)">Conservazione</a></li>
-            <li><a href="#t7" onclick="scrollToH2(7)">Destinatari</a></li>
-            <li><a href="#t8" onclick="scrollToH2(8)">Trasferimenti</a></li>
-            <li><a href="#t9" onclick="scrollToH2(9)">Diritti</a></li>
-            <li><a href="#t10" onclick="scrollToH2(10)">Modulo</a></li>
-            <li><a href="#t11" onclick="scrollToH2(11)">Cookie</a></li>
-            <li><a href="#t12" onclick="scrollToH2(12)">Sicurezza e aggiornamenti</a></li>
+          <ol class="toc-list">
+            <li><a href="#section-1">1. Titolare del Trattamento</a></li>
+            <li><a href="#section-2">2. Tipologie di Dati</a></li>
+            <li><a href="#section-3">3. Finalità e Basi Giuridiche</a></li>
+            <li><a href="#section-4">4. Natura del Conferimento</a></li>
+            <li><a href="#section-5">5. Modalità del Trattamento</a></li>
+            <li><a href="#section-6">6. Tempi di Conservazione</a></li>
+            <li><a href="#section-7">7. Destinatari dei Dati</a></li>
+            <li><a href="#section-8">8. Trasferimenti Extra-UE</a></li>
+            <li><a href="#section-9">9. Diritti dell'Interessato</a></li>
+            <li><a href="#section-10">10. Cookie</a></li>
+            <li><a href="#section-11">11. Modulo Contatti</a></li>
+            <li><a href="#section-12">12. Sicurezza</a></li>
+            <li><a href="#section-13">13. Minori</a></li>
+            <li><a href="#section-14">14. Modifiche</a></li>
+            <li><a href="#section-15">15. Legge Applicabile</a></li>
+            <li><a href="#section-16">16. Contatti</a></li>
           </ol>
-          <p class="muted">Hai bisogno di chiarimenti? Scrivi a <a href="mailto:info@assoprof.it">info@assoprof.it</a>.</p>
+        </div>
+
+        <div class="card" style="margin-top: 1.5rem;">
+          <h3 style="margin-top: 0;">Download</h3>
+          <p style="font-size: 0.9rem; color: #6e6e73;">
+            Puoi richiedere una copia in formato PDF di questa informativa scrivendo a <a href="mailto:info@assoprof.it">info@assoprof.it</a>.
+          </p>
         </div>
       </aside>
     </div>
   </main>
 
   <footer class="footer">
-    <p>© 2025 Studio Commerciale Piccinelli. Tutti i diritti riservati. |
-      <a href="/privacy.html">Privacy Policy</a> | <a href="/cookie.html">Cookie Policy</a>
+    <p>
+      © 2025 Studio Commerciale Piccinelli. Tutti i diritti riservati.
+    </p>
+    <p style="margin-top: 0.5rem;">
+      <a href="/">Home</a> | 
+      <a href="/privacy.html">Privacy Policy</a> | 
+      <a href="/cookie.html">Cookie Policy</a>
     </p>
   </footer>
 
-  <script>
-    // Simple helper to scroll to nth H2
-    function scrollToH2(n){
-      const h2s = document.querySelectorAll('main h2');
-      const el = h2s[n-1];
-      if(el){ el.scrollIntoView({behavior:'smooth', block:'start'}); }
-    }
-  </script>
 </body>
 </html>
