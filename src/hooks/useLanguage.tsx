@@ -1287,17 +1287,6 @@ const changeLanguage = (lang: Language) => {
     console.error('[i18n] Failed to update URL:', error);
   }
   
-  // AGGIUNGI QUESTO: Forza il refresh su Chrome mobile
-  if (/Android|iPhone|iPad|iPod/i.test(navigator.userAgent)) {
-    // Forza un piccolo delay per dare tempo a Chrome mobile di aggiornare
-    setTimeout(() => {
-      window.dispatchEvent(new Event('languagechange'));
-      // Forza il re-render forzando un update del DOM
-      document.documentElement.setAttribute('lang', lang);
-    }, 50);
-  }
-};
-
   const t = (key: string): string => {
     const entry = translations[key];
     if (!entry) return key;
@@ -1324,20 +1313,3 @@ export const useLanguage = () => {
   }
   return context;
 };
-// AGGIUNGI QUESTO useEffect:
-useEffect(() => {
-  // Listener per forzare il re-render su Chrome mobile
-  const handleLanguageChange = () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const urlLang = urlParams.get('lang') as Language;
-    if (urlLang && urlLang !== currentLanguage) {
-      setCurrentLanguage(urlLang);
-    }
-  };
-  
-  window.addEventListener('languagechange', handleLanguageChange);
-  
-  return () => {
-    window.removeEventListener('languagechange', handleLanguageChange);
-  };
-}, [currentLanguage]);
