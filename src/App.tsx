@@ -19,11 +19,16 @@ import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
 
+// NUOVO: Layout wrapper che forza il re-render quando cambia lingua
+const Layout = ({ children }: { children: React.ReactNode }) => {
+  const { currentLanguage } = useLanguage();
+  return <div key={currentLanguage}>{children}</div>;
+};
+
 const HomePage = () => {
   const { currentLanguage, changeLanguage } = useLanguage();
-
   return (
-    <div key={currentLanguage} className="min-h-screen">
+    <div className="min-h-screen">
       <Navigation currentLang={currentLanguage} onLanguageChange={changeLanguage} />
       <main>
         <HeroSection />
@@ -45,13 +50,14 @@ const App = () => (
         <Toaster />
         <Sonner />
         <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<HomePage />} />
-            <Route path="/privacy" element={<Privacy />} />
-            <Route path="/cookie" element={<Cookie />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <Layout>
+            <Routes>
+              <Route path="/" element={<HomePage />} />
+              <Route path="/privacy" element={<Privacy />} />
+              <Route path="/cookie" element={<Cookie />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Layout>
         </BrowserRouter>
       </LanguageProvider>
     </TooltipProvider>
