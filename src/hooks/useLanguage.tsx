@@ -1259,34 +1259,35 @@ export const LanguageProvider = ({ children }: LanguageProviderProps) => {
     return 'it';
   });
 
-const changeLanguage = (lang: Language) => {
-  if (!['it', 'en', 'fr', 'es', 'tr', 'sq', 'zh', 'de', 'ro'].includes(lang)) {
-    console.error('[i18n] Invalid language code:', lang);
-    return;
-  }
-  
-  try {
-    console.log('[i18n] changeLanguage ->', lang);
-  } catch {}
-  
-  setCurrentLanguage(lang);
-  
-  // Save to localStorage
-  try { 
-    localStorage.setItem('language', lang); 
-  } catch (error) {
-    console.error('[i18n] Failed to save language to localStorage:', error);
-  }
-  
-  // Update URL parameter while preserving hash
-  try {
-    const url = new URL(window.location.href);
-    url.searchParams.set('lang', lang);
-    window.history.replaceState({}, '', url.toString());
-  } catch (error) {
-    console.error('[i18n] Failed to update URL:', error);
-  }
-  
+  const changeLanguage = (lang: Language) => {
+    if (!['it', 'en', 'fr', 'es', 'tr', 'sq', 'zh', 'de', 'ro'].includes(lang)) {
+      console.error('[i18n] Invalid language code:', lang);
+      return;
+    }
+    
+    try {
+      console.log('[i18n] changeLanguage ->', lang);
+    } catch {}
+    
+    setCurrentLanguage(lang);
+    
+    // Save to localStorage
+    try { 
+      localStorage.setItem('language', lang); 
+    } catch (error) {
+      console.error('[i18n] Failed to save language to localStorage:', error);
+    }
+    
+    // Update URL parameter while preserving hash
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set('lang', lang);
+      window.history.replaceState({}, '', url.toString());
+    } catch (error) {
+      console.error('[i18n] Failed to update URL:', error);
+    }
+  };
+
   const t = (key: string): string => {
     const entry = translations[key];
     if (!entry) return key;
